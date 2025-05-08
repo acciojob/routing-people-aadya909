@@ -1,19 +1,20 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import UserList from './UserList';
 import UserDetails from './UserDetails';
 
 function App() {
     return (
         <Router>
-            <Routes>
-                <Route path="/" element={<UserList />} />
-                <Route path="/users/:id" element={<UserDetails />} />
-            </Routes>
+            <Switch>
+                <Route exact path="/" component={UserList} />
+                <Route path="/users/:id" component={UserDetails} />
+            </Switch>
         </Router>
     );
 }
 
 export default App;
+
 
